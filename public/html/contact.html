@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap">
+    <link rel="stylesheet" href="../css/navbar.css">
+</head>
+<body>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <div class="logo">Une Sardine dans l'eau</div>
+    <ul class="nav-links">
+        <li><a href="../html/accueil.html">Home</a></li>
+        <li><a href="../html/About.html">services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="../html/contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</nav>
+<div class="form-container">
+    <h2>Contactez-nous</h2>
+    <form id="contactForm">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom..." required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="Votre email..." required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+
+        <button type="submit" class="styled-button">Envoyer</button>
+    </form>
+</div>
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <h2>About Us</h2>
+            <p>We are a professional company dedicated to providing excellent services.</p>
+        </div>
+        <div class="footer-center">
+            <h2>Contact</h2>
+            <p><i class="fas fa-phone"></i> +32123456789</p>
+            <p><i class="fas fa-envelope"></i> sardine.sada@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Rue sardine 69, 1890rivèrer, océeans</p>
+        </div>
+        <div class="footer-right">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Include the EmailJS library -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function() {
+      emailjs.init('bB15tk3exwh5rZRO8'); // Remplace 'YOUR_USER_ID' par ton User ID EmailJS
+   })();
+
+   // Fonction pour envoyer l'email
+   function sendEmail(contact) {
+       emailjs.send("service_5ha564o", "template_la1p12j", {
+           name: contact.name,
+           email: contact.email,
+           message: contact.message
+       })
+       .then(function(response) {
+           alert("Email envoyé avec succès!");
+       }, function(error) {
+           alert("Erreur lors de l'envoi de l'email : " + JSON.stringify(error));
+       });
+   }
+
+   // Écouter l'événement submit du formulaire
+   document.getElementById('contactForm').addEventListener('submit', function(e) {
+       e.preventDefault(); // Empêche l'envoi classique du formulaire
+
+       // Récupérer les valeurs du formulaire
+       const name = document.getElementById('name').value;
+       const email = document.getElementById('email').value;
+       const message = document.getElementById('message').value;
+
+       // Créer un objet de contact
+       const contact = {
+           name: name,
+           email: email,
+           message: message
+       };
+
+       // Envoyer l'email via EmailJS
+       sendEmail(contact);
+
+       // Réinitialiser le formulaire après l'envoi
+       document.getElementById('contactForm').reset();
+   });
+</script>
+<script>
+    // JavaScript to handle back to top button
+    document.addEventListener('DOMContentLoaded', () => {
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Adjust this value based on when you want the button to appear
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="script.js">const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

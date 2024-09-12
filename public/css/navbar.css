@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Protest+Strike&family=Raleway:wght@400;700&display=swap");
+
+/* Global styles */
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+    color: #101010;
+    background-color: #f5f5f5;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #acacac;
+    padding: 1rem 2rem;
+    color: #101010;
+    position: relative;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 1rem;
+}
+
+.navbar .nav-links a {
+    color: #101010;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar .nav-links a:hover {
+    border-bottom: 2px solid #0099ff;
+}
+
+.navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+/* Main Content Styles */
+main {
+    margin-top: 4rem; /* Ajustez en fonction de la hauteur de la navbar */
+    padding-bottom: 4rem; /* Ajustez en fonction de la hauteur du footer */
+}
+
+.intro {
+    text-align: center;
+    padding: 2rem;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+ /* Services Section */
+/* Services Section */
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #f5f5f5;
+}
+
+.services h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.services p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Horizontal container for service boxes */
+.hori {
+    display: flex;
+    flex-direction: row; /* Aligns items horizontally */
+    flex-wrap: wrap; /* Allows wrapping to the next line if needed */
+    justify-content: center; /* Center align boxes horizontally */
+    align-items: flex-start; /* Align boxes at the start of the container */
+    gap: 1rem; /* Space between boxes */
+}
+
+/* Individual service box */
+.service-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 300px; /* Fixed width for boxes */
+    height: auto; /* Fixed height for boxes */
+    box-sizing: border-box; /* Include padding and border in width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for service boxes */
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-box h3 {
+    margin-top: 0;
+}
+
+.service-box p {
+    margin: 0;
+}
+
+/* Text Box Styles */
+.text-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px; /* Adjust width as needed */
+    overflow: hidden;
+}
+
+.text-box p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .service-box {
+        width: calc(50% - 1rem); /* Two boxes per row on medium screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-box {
+        width: calc(100% - 1rem); /* One box per row on small screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+}
+
+/******************/
+
+/* Divider Styles */
+.divider {
+    background-color: #333; /* Couleur de la ligne */
+    height: 4px; /* Hauteur de la ligne */
+    margin: 2rem 0; /* Espace autour de la ligne */
+}
+/* Image Box Styles */
+.image-box {
+    text-align: center;
+    padding: 2rem;
+}
+
+.image-box h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.image-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: inline-block; /* Maintient l'image centrée */
+    max-width: 80%; /* Limite la largeur maximale à 80% de l'écran */
+    margin-bottom: 1rem;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Limite la largeur maximale de l'image */
+    display: block; /* Évite l'espace en bas de l'image */
+}
+
+.image-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .image-container {
+        max-width: 100%; /* Largeur complète sur les petits écrans */
+    }
+    
+    .image-box h2 {
+        font-size: 1.5rem;
+    }
+    
+    .image-box p {
+        font-size: 0.875rem;
+    }
+}
+/* Back to Top Button Styles */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    font-size: 24px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.back-to-top:hover {
+    background: #555;
+    transform: scale(1.1);
+}
+
+.back-to-top i {
+    margin: 0;
+}
+
+/* Show button when scrolling down */
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+/* Footer styles */
+.footer {
+    background-color:#acacac;
+    color: #101010;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+    flex: 1;
+    margin: 1rem;
+}
+
+.footer h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .social-icon {
+    color: #101010;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.footer .social-icon:hover {
+    color: #0099ff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .hamburger {
+        display: flex;
+    }
+
+    .navbar .nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+/* Styles pour le container du bouton */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Centre verticalement le bouton */
+    background-color: white;
+}
+
+/* Styles pour le bouton */
+.styled-button {
+    background-color: #dddddd; /* Couleur de fond */
+    color: rgb(0, 0, 0); /* Couleur du texte */
+    border: none; /* Supprime les bordures */
+    padding: 5px 5px; /* Espacement interne */
+    margin: auto;
+    text-align: center; /* Centrage du texte */
+    font-size: 16px; /* Taille de la police */
+    border-radius: 8px; /* Bordures arrondies */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Effet de transition */
+}
+
+/* Effet de survol */
+.styled-button:hover {
+    background-color: #000000; /* Change la couleur de fond au survol */
+    transform: translateY(-3px); /* Légère élévation */
+    color: white;
+}
+
+/* Effet lors du clic */
+.styled-button:active {
+    background-color: #b6b6b6; /* Couleur lors du clic */
+    transform: translateY(2px); /* Légère baisse */
+    color: white;
+}
+
+/* Style responsive pour les petits écrans */
+@media (max-width: 600px) {
+    .styled-button {
+        width: 100%;
+        padding: 15px; /* Ajuste la taille du bouton sur les petits écrans */
+    }
+}
+/* Container principal pour centrer le formulaire */
+.form-container {
+    background-color: #fff; /* Fond blanc pour le formulaire */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-sizing: border-box;
+}
+
+/* Style pour le titre */
+.form-container h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Style pour les labels */
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Style pour les champs texte */
+form input[type="text"], form input[type="email"], form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Style pour le champ de texte (textarea) */
+form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+/* Style du bouton "Envoyer" */
+.styled-button {
+    background-color: #b6b6b6;
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+/* Effet au survol et clic */
+.styled-button:hover {
+    background-color: #000000;
+    transform: translateY(-3px);
+    color: white;
+}
+
+.styled-button:active {
+    background-color: #b6b6b6;
+    transform: translateY(2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+    }
+}
