@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar and Footer</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Une Sardine dans l'eau</div>
+        <ul class="nav-links">
+            <li><a href="../html/accueil.html">Home</a></li>
+            <li><a href="../html/About.html">services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <br><br>
+    <main>
+        <section class="intro">
+            <h1>Mes Compétences</h1>
+            <div class="container">
+            <div class="text-box">
+                <p> 
+                    <div class="progress-bar1">
+                        <div class="progress1" style="width: 85%;"><strong> Word</strong></div>
+                    </div>
+                    <div class="progress-bar1">
+                        <div class="progress1" style="width: 75%;"><strong>Micro:bit MakCode</strong> </div>
+                    </div>
+                    <div class="progress-bar1">
+                        <div class="progress1" style="width: 65%;"><strong>Tinkercads</strong></div>
+                    </div>
+                    <div class="progress-bar1">
+                        <div class="progress1" style="width: 80%;"> <strong>Scratch</strong></div>
+                    </div>
+                    <div class="progress-bar1">
+                        <div class="progress1" style="width: 75%;"> <strong>Visuale studio</strong></div>
+                    </div>
+                    <div class="progress-bar1">
+                        <div class="progress1" style="width: 70%;"> <strong>Code : HTML &
+                            CSS</strong></div>
+                    </div>
+                    <div class="progress-bar1">
+                        <div class="progress1" style="width: 50%;"> <strong>Javascripts</strong></div>
+                    </div>
+                    <div class="progress-bar1">
+                        <div class="progress1" style="width: 50%;"> <strong>Indesgn</strong></div>
+                    </div>
+                </p>
+                <br><br>
+            </div>
+        </section>
+        <!-- Ligne de séparation -->
+        <br><br>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>About Us</h2>
+                <p>"Je suis une professionnelle dédiée à fournir d'excellents cours d'informatique et à créer des sites web de qualité supérieure."</p>
+            </div>
+            <div class="footer-center">
+                <h2>Contact</h2>
+                <p><i class="fas fa-phone"></i> +32123456789</p>
+                <p><i class="fas fa-envelope"></i> sardine.sada@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rue sardine 69, 1890rivèrer, océeans</p>
+            </div>
+            <div class="footer-right">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const progressBars = document.querySelectorAll('.progress');
+
+        progressBars.forEach(function (bar) {
+            const progress = bar.getAttribute('data-progress');
+            bar.style.width = progress;
+        });
+    });
+
+    </script>
+    <script>
+        // Fonction pour démarrer la progression automatiquement au chargement de la page
+        window.onload = function() {
+            var progressBar = document.getElementById('progress-bar');
+            var progressText = document.getElementById('progress-text');
+            var width = 0;
+            var interval = setInterval(function() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    progressText.textContent = 'Complété';
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                }
+            }, 20); // 20ms pour un remplissage progressif
+        };
+    </script>
+
+<script>
+    function startProgress() {
+        var progressBar = document.getElementById('progress-bar');
+        var progressText = document.getElementById('progress-text');
+        var width = 0;
+        var interval = setInterval(function() {
+            if (width >= 100) {
+                clearInterval(interval);
+                progressText.textContent = 'Complété';
+            } else {
+                width++;
+                progressBar.style.width = width + '%';
+            }
+        }, 20); // 20ms pour un remplissage progressif
+    }
+</script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js">const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

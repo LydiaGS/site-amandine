@@ -69,6 +69,8 @@ main {
 .intro {
     text-align: center;
     padding: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro h1 {
@@ -149,14 +151,22 @@ main {
     margin: 2rem auto;
     max-width: 800px; /* Adjust width as needed */
     overflow: hidden;
+    justify-content: left;
+    text-align: left;
 }
 
 .text-box p {
     margin: 0;
     font-size: 1rem;
     line-height: 1.5;
+    text-align: left;
 }
-
+.text-box .titre-box{
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .service-box {
@@ -456,4 +466,34 @@ form textarea {
     .form-container {
         width: 90%;
     }
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+h1 {
+    color: #333;
+}
+
+.progress-bar1 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.progress1 {
+    background-color: #4caf50;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+    width: 0;
+    transition: width 3s ease-out;
 }
